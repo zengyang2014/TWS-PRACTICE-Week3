@@ -35,7 +35,4 @@ function main(inputs) {
     return Math.round(result);
 };
 
-function buildInputs() {
-
-}
 module.exports = main;
