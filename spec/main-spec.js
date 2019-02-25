@@ -1,6 +1,21 @@
 const main = require('../main/main');
 
 describe('taxi fee', function() {
+    //拆成多个测试，一般一个测试中我们只测一个情况，这样方便以后重构代码时快速定位错误
+    context("when input with wrong format", () => {
+        it("should give error information when input is null", () => {
+            let result = main(null);
+            
+            expect(result).toString("请输入行驶公里数与等待时间，期待输入为“行驶公里数 等待时间”（等待时间可选））");
+        });
+        
+        it("should give error information when input is empty", () => {
+            let result = main("");
+            
+            expect(result).toString("请输入行驶公里数与等待时间，期待输入为“行驶公里数 等待时间”（等待时间可选））");
+        })
+        //...
+    });
     it("should give error information when input is in a wrong format", function() {
         let result1 = main(null);
         let result2 = main("");
